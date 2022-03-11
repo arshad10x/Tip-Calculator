@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- JS LINK -->
+  <script src="./script.js" defer></script>
+
+  <title>Tip Calculator</title>
+
+</head>
+<body>
+  <main class="card">
+    <img src="images/logo.svg" alt="logo" class="logo">
+
+    <div class="bill">
+      <h1 class="bill-title">Bill</h1>
+      <div class="bill-wrapper">
+        <img src="images/icon-dollar.svg" alt="dollar">
+        <input type="number" name="cost" id="cost" class="cost" placeholder="0" min="0">
+      </div>
+    </div>
+
+    <div class="tips">
+      <h1 class="tips-title">Select Tip %</h1>
+      <div class="tips-grid">
+        <button value="0.05">5%</button>
+        <button value="0.1">10%</button>
+        <button value="0.15">15%</button>
+        <button value="0.25">25%</button>
+        <button value="0.5">50%</button>
+        <input type="number" name="custom-tip" class="custom" id="customTip" placeholder="Custom" min="0" max="100">
+      </div>
+    </div>
+
+    <div class="people">
+      <h1 class="people-title">Number of People</h1>
+      <div class="people-wrapper">
+        <img src="images/icon-person.svg" alt="person">
+        <input type="number" id="peopleNum" class="people-num" placeholder="1" min="1">
+        <span class="invalid-msg">Can't be zero</span>
+      </div>
+    </div>
+
+    <div class="total" >
+      <div class="total-tip">
+        <div class="total-tip-left">
+          <p>Tip Amount</p>
+          <span>/ person</span>
+        </div>
+        <h2 id="tipTotal" class="total-tip-right">$0.00</h2>
+      </div>
+      <div class="total-cost">
+        <div class="total-cost-left">
+          <p>Total</p>
+          <span>/ person</span>
+        </div>
+        <h2 id="personTotal" class="total-cost-right">$0.00</h2>
+      </div>
+      <button id="reset" class="reset">Reset</button>
+    </div>
+  </main>
+
+</body>
+</html>

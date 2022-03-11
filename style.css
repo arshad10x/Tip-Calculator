@@ -1,0 +1,410 @@
+
+/*---------------------START----------------------*/
+
+:root {
+  /* Colors */
+  /* Primary */
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral */
+  --v-dark-cyan: hsl(183, 100%, 15%);
+  --dark-cyan: hsl(186, 14%, 43%);
+  --gray-cyan: hsl(184, 14%, 56%);
+  --light-cyan: hsl(185, 41%, 84%);
+  --v-light-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Error */
+  --clr-red: hsl(0, 100%, 61%);
+
+  /* border-radius */
+  --sharp: 0.5rem;
+  --wide: 1.5rem;
+}
+
+/*-------------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body,
+h1,
+h2,
+p,
+span {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+body,
+input,
+button {
+  font-family: 'Space Mono', monospace;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 2.4em;
+}
+
+input {
+  border: none;
+  text-align: right;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.reset {
+  text-transform: uppercase;
+}
+
+body {
+  background-color: var(--light-cyan);
+}
+main.card {
+  background-color: var(--white);
+}
+
+h1 { color: var(--dark-cyan); }
+h2 { color: var(--strong-cyan); }
+p { color: var(--light-cyan); }
+
+input {
+  color: var(--v-dark-cyan);
+  background-color: var(--v-light-cyan);
+}
+input:focus {
+  box-shadow: 0 0 0 2px var(--strong-cyan);
+}
+input::placeholder {
+  color: var(--gray-cyan);
+}
+
+input.invalid {
+  border-color: var(--clr-red);
+  box-shadow: 0 0 0 2px hsl(0, 100%, 90%);
+}
+
+.invalid-msg {
+  color: var(--clr-red);
+}
+
+.tips-grid > button {
+  color: var(--v-light-cyan);
+  background-color: var(--v-dark-cyan);
+}
+.tips-grid > button:hover,
+.tips-grid > button.clicked {
+  color: var(--v-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+.tips-grid .custom {
+  color: var(--gray-cyan);
+  background-color: var(--v-light-cyan);
+}
+
+.total {
+  background-color: var(--v-dark-cyan);
+}
+
+.total-tip-left span,
+.total-cost-left span {
+  color: var(--gray-cyan);
+}
+p:last-child { color: var(--gray-cyan); }
+
+.bill-wrapper,
+.people-wrapper,
+p:last-child {
+  background-color: var(--v-light-cyan);
+}
+.reset {
+  color: var(--v-dark-cyan);
+  background-color: hsl(172, 67%, 45%, 0.2);
+  background-color: var(--strong-cyan);
+}
+.reset.active {
+  background-color: hsl(171, 100%, 80%);
+}
+
+/*-------------------------------------------*/
+
+  /* Font */
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+button {
+  font-size: 2rem;
+}
+
+input {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.invalid-msg {
+  font-size: 1.3rem;
+}
+
+.total-tip-left p,
+.total-cost-left p {
+  font-size: 1.6rem;
+}
+
+.total-tip-left span,
+.total-cost-left span {
+  font-size: 1.3rem;
+}
+
+h2.total-cost-right,
+h2.total-tip-right {
+  font-size: 2.4rem;
+}
+
+/*-------------------------------------------*/
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+main.card {
+  margin-top: 11.5rem;
+  padding: 3rem;
+  width: 100%;
+  border-radius: 3rem 3rem 0 0;
+}
+
+.bill,
+.people {
+  margin-bottom: 3rem;
+}
+.people {
+  position: relative;
+}
+
+.bill-title,
+.people-title {
+  padding-bottom: 0.5rem;
+}
+.bill-wrapper,
+.people-wrapper {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.6;
+  border-radius: 0.5rem;
+}
+
+.invalid-msg {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 4.15rem;
+}
+.invalid-msg.invalid {
+  visibility: visible;
+}
+
+.bill-wrapper > img,
+.people-wrapper > img {
+  padding: 1.15rem 2rem;
+}
+
+.tips {
+  margin-top: 2.5rem;
+}
+.tips-title {
+  margin-bottom: 1rem;
+}
+.tips-grid {
+  margin-bottom: 4.5rem;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  gap: 10% 4%;
+}
+.tips-grid button {
+  border-radius: var(--sharp);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+input {
+  border-radius: 0.5rem;
+}
+
+.total {
+  padding: 3.75rem 2.5rem 2.5rem;
+  border-radius: var(--wide);
+}
+
+.total-tip,
+.total-cost {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.total-cost-left,
+.total-tip-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-cost-right,
+.total-tip-right {
+  position: absolute;
+  right: 0;
+}
+
+.reset {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-radius: var(--sharp);
+}
+
+/*------- Responsive Design - desktop(1064px and above)------------*/
+
+@media (min-width: 66.51em) {
+  .logo {
+      padding-top: 12rem;
+  }
+
+  main.card {
+      margin: 25rem auto;
+      width: 60%;
+      border-radius: var(--wide);
+      display: grid;
+      grid-template-areas: 
+          "bill total"
+          "tips total"
+          "people total";
+      column-gap: 5%;
+  }
+
+  .bill {
+      grid-area: bill;
+      margin-bottom: 0;
+  }
+
+  .tips {
+      grid-area: tips;
+  }
+  .tips-grid {
+      grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+      row-gap: 20%;
+  }
+  .custom {
+      width: 100%;
+  }
+
+  .people {
+      grid-area: people;
+      margin-bottom: 0;
+  }
+
+  .total {
+      grid-area: total;
+  }
+
+  .total-cost-left,
+  .total-tip-left {
+      padding-right: 11.5rem;
+  }
+
+  h2.total-cost-right,
+  h2.total-tip-right {
+      font-size: 3.6rem;
+  }
+
+  .reset {
+      margin-top: 7.75rem;
+  }
+}
+
+/*-----------Responsive Design - small desktop (1064px - 720px)---------*/
+
+@media (max-width: 66.5em) and (min-width: 42.5em) {
+
+  .logo {
+      padding-top: 12rem;
+  }
+
+  main.card {
+      margin: 25rem auto;
+      width: 90%;
+      border-radius: var(--wide);
+      display: grid;
+      grid-template: 
+          "bill total"
+          "tips total"
+          "people total";
+      column-gap: 5%;
+  }
+
+  .bill {
+      grid-area: bill;
+      margin-bottom: 0;
+  }
+
+  .tips {
+      grid-area: tips;
+  }
+  .tips-grid {
+      grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+      row-gap: 20%;
+  }
+  .custom {
+      width: 100%;
+  }
+
+  .people {
+      grid-area: people;
+      margin-bottom: 0;
+  }
+
+  .total {
+      grid-area: total;
+  }
+
+  .total-cost-left,
+  .total-tip-left {
+      padding-right: 9rem;
+  }
+
+  h2.total-cost-right,
+  h2.total-tip-right {
+      font-size: 2.8rem;
+  }
+
+  .reset {
+      margin-top: 7rem;
+  }
+}
